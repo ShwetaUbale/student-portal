@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sri Balaji University</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --primary: #124191;
+            --accent: #ffb400;
+            --bg: #eef4fb;
+            --surface: #ffffff;
+            --surface-soft: #f8fbff;
+            --muted: #5e6f89;
+            --text: #102a46;
+            --shadow: 0 24px 50px rgba(15, 23, 42, 0.09);
+            --radius: 28px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(255, 180, 0, 0.18), transparent 24%),
+                        linear-gradient(180deg, #f2f7fd 0%, #edf5ff 52%, #f8fbff 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(18, 65, 145, 0.08);
+            padding: 22px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        header h1 {
+            font-size: 1.55rem;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border-radius: 999px;
+            color: var(--text);
+            font-weight: 600;
+            text-decoration: none;
+            background: rgba(31, 62, 176, 0.08);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            background: rgba(31, 62, 176, 0.16);
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--surface);
+            padding: 36px;
+            margin-bottom: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(18, 65, 145, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 34px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            background: var(--surface-soft);
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .contact-item h3 {
+            color: var(--primary);
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 14px;
+            border: 1px solid rgba(18, 65, 145, 0.2);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(18, 65, 145, 0.02);
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #0d2a5e;
+        }
+
+        .footer {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 24px 28px;
+            border-radius: 30px;
+            background: #ffffff;
+            box-shadow: var(--shadow);
+            text-align: center;
+            color: #64748b;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 880px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 6%;
+            }
+
+            nav ul {
+                justify-content: flex-start;
+            }
+
+            section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Sri Balaji University (SBUP)</h1>
+            <p>Official Student Portal</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section>
+            <h2>Contact Us</h2>
+            <p style="color: var(--muted); margin-bottom: 30px;">Get in touch with Sri Balaji University's Student Support team. We're here to help!</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:support@sbup.edu" style="color: var(--primary); text-decoration: none;">support@sbup.edu</a></p>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Response time: 24-48 hours</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+91-1234-567-8900" style="color: var(--primary); text-decoration: none;">+91-1234-567-8900</a></p>
+                        <p style="font-size: 0.9rem; margin-top: 8px;">Mon-Fri, 9:00 AM - 5:00 PM</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📍 Office Address</h3>
+                        <p>Sri Balaji University<br>Student Services Building<br>Campus Avenue, City, State 123456</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="color: var(--primary); margin: 0 0 16px 0;">Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@sbup.edu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Please enter your message..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Student support for Sri Balaji University — we're here to help!</p>
+    </footer>
+
+</body>
+</html>
